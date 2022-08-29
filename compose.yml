@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  runner:
+    image: ghcr.io/nnemirovsky/gh-actions-runner-docker:latest
+    environment:
+      ACCESS_TOKEN: ${ACCESS_TOKEN} # GitHub personal access token
+      MODE: ${MODE} # "org" or "repo"
+      SOURCE: ${SOURCE} # "org", "user/repo" or "org/repo"
+    restart: unless-stopped
