@@ -2,8 +2,15 @@ FROM ubuntu:20.04
 
 LABEL maintainer="Nikita Nemirovsky <n.nemirovskiy@gmail.com>"
 
-ENV ORGANIZATION=""
+# github personal access token
 ENV ACCESS_TOKEN=""
+
+# should be either "org" or "repo"
+ENV MODE="org"
+
+# if MODE is "org", then this is organization name, 
+# otherwise - path to repository ("org/repo" or "user/repo")
+ENV SOURCE=""
 
 ARG TARGETARCH
 ARG DEBIAN_FRONTEND=noninteractive
